@@ -33,4 +33,14 @@ public class EmployeeController {
     public void deleteEmp(@PathVariable Long id){
         service.deleteEmpById(id);
     }
+
+    @PutMapping("update-emp")
+    public void updateEmployee(@RequestBody Employee employee){
+        service.updateEmployee(employee);
+    }
+
+    @GetMapping("/find-by-id/{id}")
+    public Employee findById(@PathVariable Long id){
+        return service.findById(id);
+    }
 }
